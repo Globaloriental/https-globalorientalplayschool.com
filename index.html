@@ -1,10 +1,309 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Global Oriental Play School</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Oriental Play School | Admissions Open!</title>
+    <!-- Import a playful, rounded Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2d3436;
+            background-color: #f8f9fa;
+        }
+        
+        /* Highlight Banner */
+        .top-banner {
+            background-color: #ff9f43;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { background-color: #ff9f43; }
+            50% { background-color: #ee5253; }
+            100% { background-color: #ff9f43; }
+        }
+        
+        /* Hero Header */
+        header {
+            background: linear-gradient(135deg, #48dbfb 0%, #1dd1a1 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 8px solid #ff9f43;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        header p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            font-weight: 700;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: #ff9f43;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-decoration: none;
+            margin-top: 25px;
+            box-shadow: 0 4px 15px rgba(255, 159, 67, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 159, 67, 0.6);
+            background-color: #ee5253;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Sections */
+        section {
+            background: white;
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #ee5253;
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        
+        /* Features / Why Choose Us */
+        .features-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .feature-box {
+            flex: 1 1 calc(33% - 20px);
+            background: #fdfbfb;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px dashed #1dd1a1;
+        }
+        .feature-box h3 {
+            color: #1dd1a1;
+            font-size: 1.4rem;
+        }
+
+        /* Programs Grid */
+        .programs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        .program-card {
+            flex: 1 1 calc(33.333% - 25px);
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+        /* Colorful Cards */
+        .card-1 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #2d3436; }
+        .card-2 { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); color: #2d3436; }
+        .card-3 { background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%); color: #2d3436; }
+        .card-4 { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); color: #2d3436; }
+        .card-5 { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); color: #2d3436; }
+
+        .program-card h3 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            font-weight: 900;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .contact-info {
+            flex: 1 1 300px;
+            font-size: 1.1rem;
+            background: #fff9f4;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 8px solid #ff9f43;
+        }
+        
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            flex: 1;
+            text-align: center;
+            background-color: #2d3436;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .social-links a:hover {
+            background-color: #ff9f43;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .program-card, .feature-box { flex: 1 1 100%; }
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to Global Oriental Play School!</h1>
-  <p>Our website is under construction. Please check back soon.</p>
+
+<div class="top-banner">
+    🌟 ADMISSIONS OPEN FOR 2026-2027! ENROLL YOUR CHILD TODAY 🌟
+</div>
+
+<header>
+    <h1>Global Oriental Play School</h1>
+    <p>Your Child's Second Home in Pipariya</p>
+    <a href="#contact" class="cta-button">Apply for Admission</a>
+</header>
+
+<div class="container">
+    
+    <!-- Why Choose Us Section -->
+    <section id="about">
+        <h2>Why Parents Trust Us ❤️</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <h3>🎭 Smart Classes & Theater</h3>
+                <p>Modern visual, audio tools, and a dedicated theater room for immersive learning and performances.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🧩 Montessori Lab</h3>
+                <p>A fully equipped interactive lab that encourages tactile learning and hands-on exploration.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🛡️ Safe & Nurturing</h3>
+                <p>A highly secure, clean environment heavily focused on confidence building and social skills.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs">
+        <h2>Our Joyful Learning Programs 🎨</h2>
+        <div class="programs">
+            <div class="program-card card-1">
+                <h3>Daycare</h3>
+                <p>A secure, nurturing home away from home where your child is cared for by attentive staff in a structured and safe environment.</p>
+            </div>
+            <div class="program-card card-2">
+                <h3>Playway</h3>
+                <p>An introduction to school life focusing on learning through unstructured play, exploration, and sensory activities.</p>
+            </div>
+            <div class="program-card card-3">
+                <h3>Nursery</h3>
+                <p>Fostering independence and creativity while gently introducing foundational pre-reading, pre-math, and communication skills.</p>
+            </div>
+            <div class="program-card card-4">
+                <h3>LKG</h3>
+                <p>Building on basics with structured learning, alphabet and number recognition, early writing, and interactive group activities.</p>
+            </div>
+            <div class="program-card card-5">
+                <h3>UKG</h3>
+                <p>Preparing children for primary school through advanced cognitive activities, language fluency, and critical thinking exercises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Admissions -->
+    <section id="contact">
+        <h2>Ready to Join Our Family? 🏫</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p><strong>📍 Visit Our Campus:</strong><br>
+                54, Moti Sahu Plot, In Front of Town Tower Hotel,<br>
+                Hathwas Tigadda, Pipariya, Madhya Pradesh - 461775</p>
+                
+                <p><strong>🕒 Operating Hours:</strong><br>
+                Monday to Saturday, 8:00 AM - 12:00 PM<br>
+                <em>(Closed on Sundays)</em></p>
+                
+                <p><strong>📞 Call Admissions:</strong><br>
+                +91 78284 26052<br>
+                +91 94065 12550<br>
+                +91 99778 55849</p>
+
+                <p><strong>✉️ Email Us:</strong><br>
+                <a href="mailto:goplayschool29@gmail.com" style="color: #ee5253; font-weight: bold;">goplayschool29@gmail.com</a></p>
+            </div>
+            
+            <div style="flex: 1 1 300px; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="text-align: center; color: #2d3436;">Follow Our Journey</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/globalorientalplayschool?igsh=MXJzNzF4b29meXhrZg==" target="_blank" style="background: #e1306c;">📷 Instagram</a>
+                    <a href="https://www.facebook.com/share/1E74M8JyyN/" target="_blank" style="background: #1877f2;">📘 Facebook</a>
+                    <a href="https://youtube.com/@globalorientalplayschool?si=huJMxYPb0D9vg9wb" target="_blank" style="background: #ff0000;">▶️ YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+<footer>
+    <p>&copy; 2026 Global Oriental Play School. Nurturing the future, today.</p>
+</footer>
+
 </body>
 </html>
